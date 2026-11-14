@@ -2,9 +2,9 @@
 
 Humanize AI is a Claude plugin that finds the patterns that make a draft read as AI-written, then rewrites only what is safe to change, so the text sounds like a person wrote it. Your facts stay put. Names, numbers, quotes, and dates are listed before the rewrite starts and checked against the original after it ends.
 
-**Download:** [humanize-ai.plugin](https://github.com/syncwin/humanize-ai/releases/latest/download/humanize-ai.plugin) (always the latest release)
+**Download:** [humanizeai.plugin](https://github.com/syncwin/humanizeai/releases/latest/download/humanizeai.plugin) (always the latest release)
 
-**Version** 0.6.0 (public beta) · **Author** @wasimness · **Company** SyncWin · **Contact** support@syncwin.com · **License** MIT (Wikipedia-derived material: CC BY-SA 4.0)
+**Version** 0.7.0 (public beta) · **Author** @wasimness · **Company** SyncWin · **Contact** support@syncwin.com · **License** MIT (Wikipedia-derived material: CC BY-SA 4.0)
 
 ## Why it exists
 
@@ -30,13 +30,13 @@ Full details are in `CHANGELOG.md`.
 
 ## Install
 
-**Claude (web, desktop, or Cowork).** Open **Customize > Plugins**, click **Add**, choose **Add marketplace**, then **Add from a repository**, and enter `syncwin/humanize-ai`. Install **Humanize AI** from that marketplace. Or download `Humanize AI v0.5.0.plugin` from the [v0.5.0 release](https://github.com/syncwin/humanize-ai/releases/tag/v0.5.0) and upload it as a custom plugin. Once Humanize AI is listed in Anthropic's directory, you'll be able to add it from the **Discover** tab.
+**Claude (web, desktop, or Cowork).** Open **Customize > Plugins**, click **Add**, choose **Add marketplace**, then **Add from a repository**, and enter `syncwin/humanizeai`. Install **Humanize AI** from that marketplace. Or download `Humanize AI v0.5.0.plugin` from the [v0.5.0 release](https://github.com/syncwin/humanizeai/releases/tag/v0.5.0) and upload it as a custom plugin. Once Humanize AI is listed in Anthropic's directory, you'll be able to add it from the **Discover** tab.
 
 **Claude Code.**
 
 ```
-claude plugin marketplace add syncwin/humanize-ai
-claude plugin install humanize-ai@syncwin-humanize-ai
+claude plugin marketplace add syncwin/humanizeai
+claude plugin install humanizeai@syncwin-humanize-ai
 ```
 
 Plugins added on claude.ai also sync to Claude Code (v2.1.273 or later) when you sign in with the same account.
@@ -55,7 +55,7 @@ That runs the full workflow: detect, rewrite, audit. Phrasing picks a lighter mo
 | "Does this sound AI-written? Don't rewrite it." | detect and audit only; you get a findings report |
 | "Fix what you flagged" | rewrite and audit, using findings already in the chat |
 
-To run a single stage, call it directly: `/humanize-ai:ai-pattern-detector`, `/humanize-ai:ai-pattern-remover`, or `/humanize-ai:humanize-ai-auditor`. Each one runs only its own stage, and every run ends with an audit scratchpad covering what ran.
+To run a single stage, call it directly: `/humanizeai:humanizeai-detect`, `/humanizeai:humanizeai-rewrite`, or `/humanizeai:humanizeai-audit`. Each one runs only its own stage, and every run ends with an audit scratchpad covering what ran.
 
 **Tips**
 
@@ -66,25 +66,26 @@ To run a single stage, call it directly: `/humanize-ai:ai-pattern-detector`, `/h
 
 ## Companion prompt
 
-`prompts/humanize-ai.json` is a ready-made form for [Prompt Builder](https://promptbuilder.syncwin.com/). Import it under **Settings > Import**, choose a step (Full Workflow, Detect Only, Rewrite Only, Audit Only), paste your content, and send. It's attached to each release too.
+`adapters/claude/prompts/humanize-ai.json` is a ready-made form for [Prompt Builder](https://promptbuilder.syncwin.com/). Import it under **Settings > Import**, choose a step (Full Workflow, Detect Only, Rewrite Only, Audit Only), paste your content, and send. It's attached to each release too.
 
-### Renamed in 0.6.0
+### Renamed in 0.7.0
 
 | Old | New |
 |---|---|
-| `/humanize-ai` | `/humanizeai` |
-| `/humanize-ai:humanize-ai` | `/humanize-ai:humanizeai` |
-| `skills/humanize-ai/` | `skills/humanizeai/` |
+| plugin `humanize-ai` | `humanizeai` |
+| the pattern detector skill | `/humanizeai:humanizeai-detect` |
+| the pattern remover skill | `/humanizeai:humanizeai-rewrite` |
+| the auditor skill | `/humanizeai:humanizeai-audit` |
 
-The plugin id, repository and the other three skills are unchanged.
+The plugin now lives in `adapters/claude/` (the layout Anthropic's plugin directory tracks). The repository is `syncwin/humanizeai`.
 
 ## How it works
 
 ```
 /humanizeai  (router: picks the mode and content type)
-  1. ai-pattern-detector   finds tells, tiers them, marks safe to edit or leave alone
-  2. ai-pattern-remover    builds the fact-lock list, rewrites only what's safe to edit
-  3. humanize-ai-auditor   dash and rhythm gates, checklist, fact-lock check, scratchpad
+  1. humanizeai-detect   finds tells, tiers them, marks safe to edit or leave alone
+  2. humanizeai-rewrite    builds the fact-lock list, rewrites only what's safe to edit
+  3. humanizeai-audit   dash and rhythm gates, checklist, fact-lock check, scratchpad
                            (runs in every mode)
 ```
 
@@ -92,22 +93,22 @@ The research lives in five knowledge folders, kept separate because each answers
 
 | Source | Question it answers | Folder |
 |---|---|---|
-| 1. Own research | Is this detail costly to fake? (the Specificity Gradient) | `knowledge/source-1-own-research/` |
-| 2. Wikipedia, "Signs of AI writing" | Which patterns do editors see, and which signs don't work? | `knowledge/source-2-wikipedia/` |
-| 3. StoryScope (COLM 2026) | What narrative choices give AI fiction away? | `knowledge/source-3-research-paper/` |
-| 4. Detector methodology | What do detectors measure, and how far can a score be trusted? | `knowledge/source-4-detector-methodology/` |
-| 5. Graphite AI Tells (2026) | Which frames does each model family overuse? | `knowledge/source-5-corpus-research/` |
+| 1. Own research | Is this detail costly to fake? (the Specificity Gradient) | `adapters/claude/knowledge/source-1-own-research/` |
+| 2. Wikipedia, "Signs of AI writing" | Which patterns do editors see, and which signs don't work? | `adapters/claude/knowledge/source-2-wikipedia/` |
+| 3. StoryScope (COLM 2026) | What narrative choices give AI fiction away? | `adapters/claude/knowledge/source-3-research-paper/` |
+| 4. Detector methodology | What do detectors measure, and how far can a score be trusted? | `adapters/claude/knowledge/source-4-detector-methodology/` |
+| 5. Graphite AI Tells (2026) | Which frames does each model family overuse? | `adapters/claude/knowledge/source-5-corpus-research/` |
 
 Every knowledge file carries a "Last verified" date. Ask "check for updates" and Humanize AI will offer to re-check its sources. It tells you which pages it will fetch, and it changes nothing without your yes.
 
 ## What it runs, reads, and sends
 
-Humanize AI is Markdown instructions plus two optional shell scripts, all readable in this repository.
+Humanize AI is Markdown instructions only, all readable in this repository.
 
-- No network calls of its own. It has no connectors, MCP servers, hooks, or executables. It fetches something only when you ask it to check its sources. Claude then tells you which public pages it will fetch (Wikipedia, arXiv, detector vendors' documentation, Graphite's research hub, the EU AI Act text) and uses the web tools your session already has.
+- No network calls of its own. It has no connectors, MCP servers, hooks, scripts, or executables. It fetches something only when you ask it to check its sources. Claude then tells you which public pages it will fetch (Wikipedia, arXiv, detector vendors' documentation, Graphite's research hub, the EU AI Act text) and uses the web tools your session already has.
 - It reads the content you give it and, in local clones, an optional `skills/humanizeai/assets/user-customizations.md`.
 - It writes nothing into its own folder during a run. Suggested rule changes come back to you as text.
-- `scripts/setup.sh` and `scripts/update.sh` run only if you run them, in a local clone. They copy a template file and run `git pull --ff-only`.
+- Optional local-clone steps (copy a template file, `git pull --ff-only`) are a Markdown recipe, `skills/humanizeai/references/customizations-setup.md`, that Claude follows only when you ask.
 - It collects no data. SyncWin receives nothing from your use of the plugin.
 
 ## Limitations
