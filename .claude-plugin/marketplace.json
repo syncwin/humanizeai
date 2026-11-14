@@ -8,9 +8,9 @@
   },
   "plugins": [
     {
-      "name": "humanize-ai",
+      "name": "humanizeai",
       "displayName": "Humanize AI",
-      "source": "./",
+      "source": "./adapters/claude",
       "description": "Finds AI-writing tells and rewrites text so it reads like a person wrote it, while keeping facts, names, numbers, quotes, and the writer's voice intact.",
       "category": "writing",
       "tags": [
@@ -19,7 +19,8 @@
         "humanizer",
         "ai-writing",
         "content"
-      ]
+      ],
+      "version": "0.7.0"
     }
   ]
 }

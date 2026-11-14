@@ -1,9 +1,20 @@
-# Changelog: Humanize AI (humanize-ai)
+# Changelog: Humanize AI (humanizeai)
+
+## 0.7.0: Directory layout
+
+**Changed**
+- Directory layout: the shipped plugin moved to `adapters/claude/` (plugin.json, skills, knowledge, assets, evals, prompts). The repository root keeps `marketplace.json` (source `./adapters/claude`), docs, CI and `dev/`.
+- Renamed the plugin `humanize-ai` to `humanizeai` and the stage skills `ai-pattern-detector` to `humanizeai-detect`, `ai-pattern-remover` to `humanizeai-rewrite`, `humanize-ai-auditor` to `humanizeai-audit`. All references updated; repository is `syncwin/humanizeai`; the release file is `humanizeai.plugin`.
+- Scripts to recipe: `setup.sh` and `update.sh` moved unchanged to `dev/scripts/` (maintainer only); the shipped plugin gets `skills/humanizeai/references/customizations-setup.md`, a Markdown recipe with the same setup and update steps and messages.
+- Frontmatter: removed the nested `metadata:` maps (text-only frontmatter) and rewrote each description to start with "Use when" or "Use for" within 120 characters. Dropped the image field from plugin.json.
+- The router now has a routing table with exact slugs, tie-breaks, a default question and Skill-tool loading, checked by `evals/router/cases.json`.
+- Reworded the "Opinions that sound human" guidance so it is a code-block example, not an instruction to the model.
+- Public safety: `PUBLIC-SAFETY.md`, `.public-safety-allow`, `.env.example`, `.gitignore` preset; CI validates and scans from `adapters/claude`; the root AGENTS.md no longer contains a local drive path.
 
 ## Unreleased
 
 **Added**
-- GitHub Actions workflow `release-plugin.yml` builds `humanize-ai.plugin` and attaches it to each release for a one-click download link (README).
+- GitHub Actions workflow `release-plugin.yml` builds `humanizeai.plugin` and attaches it to each release for a one-click download link (README).
 
 ## 0.6.0: Update
 

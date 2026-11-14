@@ -1,7 +1,7 @@
 name: Release plugin
 
-# Builds humanize-ai.plugin from the plugin.json version and attaches it to the GitHub release.
-# One-click download: https://github.com/syncwin/humanize-ai/releases/latest/download/humanize-ai.plugin
+# Builds humanizeai.plugin from the plugin.json version and attaches it to the GitHub release.
+# One-click download: https://github.com/syncwin/humanizeai/releases/latest/download/humanizeai.plugin
 on:
   push:
     tags: ["v*"]
@@ -16,13 +16,13 @@ concurrency:
 
 jobs:
   release:
-    name: Build and attach humanize-ai.plugin
+    name: Build and attach humanizeai.plugin
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       NAME: "Humanize AI"
-      ASSET: humanize-ai.plugin
-      ROOT: .
+      ASSET: humanizeai.plugin
+      ROOT: adapters/claude
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -44,12 +44,18 @@ jobs:
               for d, dirs, files in os.walk(root):
                   dirs[:] = sorted(x for x in dirs if x not in skip_dirs)
                   for f in sorted(files):
-                      if f in skip_files or f.endswith(".pyc"):
+                      if f in skip_files or f.endswith((".pyc", ".png")):
                           continue
                       p = os.path.join(d, f)
                       z.write(p, os.path.relpath(p, root).replace(os.sep, "/"))
+          text_ext = {".md", ".json", ".yaml", ".yml", ".txt"}
+          text_names = {"LICENSE", ".gitignore"}
           with zipfile.ZipFile(out) as z:
-              assert ".claude-plugin/plugin.json" in z.namelist(), "plugin.json missing at zip root"
+              names = z.namelist()
+              assert ".claude-plugin/plugin.json" in names, "plugin.json missing at zip root"
+              bad = [n for n in names if os.path.splitext(n)[1].lower() not in text_ext and os.path.basename(n) not in text_names]
+              assert not bad, "non-text files must not ship: " + ", ".join(bad)
+              assert not [n for n in names if n.split("/")[0] in ("hooks", "scripts") or n == ".mcp.json"], "hooks, scripts and .mcp.json must not ship"
           with open(os.environ.get("GITHUB_OUTPUT", os.devnull), "a") as g:
               g.write("version=" + version + "\n")
           print("built", out, "version", version)

@@ -4,7 +4,7 @@ Thanks for helping. Humanize AI is in public beta, so bug reports from real draf
 
 ## Report a problem
 
-Open an issue at https://github.com/syncwin/humanize-ai/issues with:
+Open an issue at https://github.com/syncwin/humanizeai/issues with:
 
 - the Humanize AI version (in `.claude-plugin/plugin.json` or the plugin details screen) and where you ran it (claude.ai, Cowork, or Claude Code);
 - the prompt you used and a short excerpt of the text, with private details removed;

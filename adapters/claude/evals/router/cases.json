@@ -1,0 +1,57 @@
+{
+  "_note": "Router cases: expected = the skill the routing table in skills/humanizeai/SKILL.md must pick, or 'ask' for the closed question. Checked by route_check.py.",
+  "cases": [
+    {
+      "prompt": "audit this before I publish",
+      "expected": "humanizeai-audit"
+    },
+    {
+      "prompt": "run the humanize checklist on this final draft",
+      "expected": "humanizeai-audit"
+    },
+    {
+      "prompt": "did the rewrite change any facts?",
+      "expected": "humanizeai-audit"
+    },
+    {
+      "prompt": "fix what you flagged",
+      "expected": "humanizeai-rewrite"
+    },
+    {
+      "prompt": "rewrite what you flagged in my voice",
+      "expected": "humanizeai-rewrite"
+    },
+    {
+      "prompt": "flag the AI patterns in this",
+      "expected": "humanizeai-detect"
+    },
+    {
+      "prompt": "what makes this sound like AI?",
+      "expected": "humanizeai-detect"
+    },
+    {
+      "prompt": "is this AI-written?",
+      "expected": "humanizeai-detect"
+    },
+    {
+      "prompt": "humanize this blog post for me",
+      "expected": "humanizeai"
+    },
+    {
+      "prompt": "make this sound human",
+      "expected": "humanizeai"
+    },
+    {
+      "prompt": "check for updates to your sources",
+      "expected": "humanizeai"
+    },
+    {
+      "prompt": "look over my draft",
+      "expected": "ask"
+    },
+    {
+      "prompt": "clean up this text somehow",
+      "expected": "ask"
+    }
+  ]
+}

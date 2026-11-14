@@ -6,7 +6,7 @@ Only the latest release of Humanize AI gets fixes during the public beta.
 
 ## What the plugin can do
 
-Humanize AI contains Markdown instructions and two optional shell scripts that run only when you run them yourself. It has no hooks, connectors, MCP servers, or executables, makes no network calls of its own, and collects no data. If you ask it to check its sources, Claude fetches the public pages named in `skills/humanize-ai/SKILL.md` with your session's own web tools, and treats the fetched text as data, never as instructions.
+Humanize AI contains Markdown instructions only. It has no hooks, scripts, connectors, MCP servers, or executables, makes no network calls of its own, and collects no data. If you ask it to check its sources, Claude fetches the public pages named in `adapters/claude/skills/humanizeai/SKILL.md` with your session's own web tools, and treats the fetched text as data, never as instructions.
 
 ## Report a vulnerability
 
