@@ -1,5 +1,11 @@
 # Changelog: Humanize AI (humanizeai)
 
+## 0.7.1: Names
+
+**Changed**
+- Marketplace name `syncwin-humanize-ai` is now `syncwin-humanizeai`, matching the plugin and repo. Existing installs: remove the old marketplace and add it again (`/plugin marketplace add syncwin/humanizeai`), then install `humanizeai@syncwin-humanizeai`.
+- Companion prompt `prompts/humanize-ai.json` is now `prompts/humanizeai.json`; the content is unchanged.
+
 ## 0.7.0: Directory layout
 
 **Changed**
