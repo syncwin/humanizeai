@@ -36,7 +36,7 @@ Full details are in `CHANGELOG.md`.
 
 ```
 claude plugin marketplace add syncwin/humanizeai
-claude plugin install humanizeai@syncwin-humanize-ai
+claude plugin install humanizeai@syncwin-humanizeai
 ```
 
 Plugins added on claude.ai also sync to Claude Code (v2.1.273 or later) when you sign in with the same account.
@@ -66,7 +66,7 @@ To run a single stage, call it directly: `/humanizeai:humanizeai-detect`, `/huma
 
 ## Companion prompt
 
-`adapters/claude/prompts/humanize-ai.json` is a ready-made form for [Prompt Builder](https://promptbuilder.syncwin.com/). Import it under **Settings > Import**, choose a step (Full Workflow, Detect Only, Rewrite Only, Audit Only), paste your content, and send. It's attached to each release too.
+`adapters/claude/prompts/humanizeai.json` is a ready-made form for [Prompt Builder](https://promptbuilder.syncwin.com/). Import it under **Settings > Import**, choose a step (Full Workflow, Detect Only, Rewrite Only, Audit Only), paste your content, and send. It's attached to each release too.
 
 ### Renamed in 0.7.0
 
