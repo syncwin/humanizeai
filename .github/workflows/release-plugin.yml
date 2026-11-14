@@ -35,7 +35,7 @@ jobs:
           root, asset = os.environ["ROOT"], os.environ["ASSET"]
           version = json.load(open(os.path.join(root, ".claude-plugin", "plugin.json"), encoding="utf-8"))["version"]
           skip_dirs = {".git", ".github", ".claude", "tests", "node_modules", "__pycache__", "evals", "prompts", "dist"}
-          skip_files = {"IMPROVEMENTS.md"}
+          skip_files = {"IMPROVEMENTS.md", ".public-safety-allow"}
           os.makedirs("dist", exist_ok=True)
           out = os.path.join(os.getcwd(), "dist", asset)
           if os.path.exists(out):
