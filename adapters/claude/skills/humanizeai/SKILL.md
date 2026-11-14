@@ -1,6 +1,6 @@
 ---
 name: humanizeai
-description: "Use when asked to humanize a draft, remove AI-writing tells, de-AI text, or check if text reads as AI-generated."
+description: "Use when asked to humanize a draft, make text sound less like AI or more human, remove AI-writing tells, de-AI a post, email or article, check if text reads as AI-generated or would trip a detector, audit AI-assisted copy before publishing, or on /humanizeai."
 license: MIT
 ---
 
