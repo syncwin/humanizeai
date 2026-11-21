@@ -42,6 +42,8 @@ Read top to bottom; a row matches when any trigger phrase appears in the request
 
 **How to load the chosen skill:** call the Skill tool with the full slug `humanizeai:<skill>` (for example `humanizeai:humanizeai-detect`) and follow it. On a surface without the Skill tool, read that skill's `SKILL.md` by relative path from the plugin root (`skills/<skill>/SKILL.md`) and follow it.
 
+**Stages run only through their own skill.** Run each stage by loading its stage skill (`humanizeai-detect`, `humanizeai-rewrite`, `humanizeai-audit`) with the Skill tool, including inside subagents; give a subagent the slug and tell it to load it. A stage result that lacks that skill's own output format (detector findings list, rewrite plus fact-lock list, auditor scratchpad) is rejected and the stage is re-run.
+
 ## Step 1: setup (once per run)
 
 - **Content type:** long-form, short-form, fiction/narrative, sales/marketing, reference/technical, email, or other. The applicability matrix is in `humanizeai-audit`'s `references/checklist.md`; default to long-form when unclear. The detector confirms or corrects this after reading.

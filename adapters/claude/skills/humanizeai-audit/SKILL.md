@@ -30,6 +30,7 @@ Runs whenever a rewrite happened. Meaning drift is the failure this plugin is bu
 
 1. **Get the list.** Use the fact-lock list `humanizeai-rewrite` built from the original. If it's missing (for example a standalone remove step), build it now from the original. With no original available, say plainly that fact-lock couldn't run.
 2. **Compare** every item against the rewrite: numbers and statistics, proper names, dates, direct quotes, URLs and citations, specific claims, and each claim's degree of certainty.
+2a. **Author-voice lines:** lines the brief marks as author voice (first-person lines such as "Most people I meet...") are fact-locked as a whole: each must appear in the rewrite unchanged, byte for byte. Any difference is drift; restore it.
 3. **Fix unintended drift before finishing:** a number rounded differently, a qualifier softened or strengthened, a name misspelled, a quote paraphrased, a citation pointing somewhere new. Don't hand drift to the person to catch.
 4. **Intended changes** (the person asked for an update or a correction) are fine; list them as intentional.
 5. **Fiction:** only the real-world framing is locked, not invented plot.

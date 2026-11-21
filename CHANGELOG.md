@@ -1,5 +1,12 @@
 # Changelog: Humanize AI (humanizeai)
 
+## 0.8.0: Feedback round
+
+**Added**
+- Author-voice lines: when a brief marks them, the rewrite keeps them byte for byte and the audit's fact-lock checks them unchanged.
+- Router rule: each stage runs only by loading its stage skill with the Skill tool (also in subagents); a result without that skill's output format is rejected and re-run.
+- `AGENTS.md` model-routing default shipped (see Improvements).
+
 ## 0.7.0: Directory layout
 
 **Changed**

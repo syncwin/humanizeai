@@ -18,7 +18,7 @@ Plans, then rewrites, in one skill: the plan is a short decision (voice, fit, fa
 
 ## Phase 1: Plan
 
-**Fact-lock list (before any rewriting).** From the *original* text, list every number, statistic, proper name, date, direct quote, URL, citation, and specific factual claim, plus the degree of certainty on each claim ("may," "will," "about"). This list goes to `humanizeai-audit` with the rewrite. For invented fiction, lock only the real-world framing (author bio, real places or facts stated as real).
+**Fact-lock list (before any rewriting).** From the *original* text, list every number, statistic, proper name, date, direct quote, URL, citation, and specific factual claim, plus the degree of certainty on each claim ("may," "will," "about"). This list goes to `humanizeai-audit` with the rewrite. **Author-voice lines:** if the brief marks lines as author voice (first-person lines such as "Most people I meet..."), copy them byte for byte, never edit them, and list each as locked. For invented fiction, lock only the real-world framing (author bio, real places or facts stated as real).
 
 **Voice calibration** (when a writing sample is provided). Read it first: sentence-length habits, word-choice level, paragraph openings, punctuation, contractions, exclamation marks, asides, recurring tics, transitions, and English variety (spelling, date format, idiom). Match the voice; don't just strip patterns and fall back to a generic "human" register. Short sentences stay short; "stuff" stays "stuff." A sample that shows habitual dash use overrides Gate 1 (dashes) in the auditor. Nothing overrides Gate 2 (rhythm). No sample: use the defaults in Phase 2 and keep the text's existing English variety.
 
