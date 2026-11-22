@@ -7,6 +7,12 @@
 - Router rule: each stage runs only by loading its stage skill with the Skill tool (also in subagents); a result without that skill's output format is rejected and re-run.
 - `AGENTS.md` model-routing default shipped (see Improvements).
 
+## 0.7.1: Names
+
+**Changed**
+- Marketplace name `syncwin-humanize-ai` is now `syncwin-humanizeai`, matching the plugin and repo. Existing installs: remove the old marketplace and add it again (`/plugin marketplace add syncwin/humanizeai`), then install `humanizeai@syncwin-humanizeai`.
+- Companion prompt `prompts/humanize-ai.json` is now `prompts/humanizeai.json`; the content is unchanged.
+
 ## 0.7.0: Directory layout
 
 **Changed**
