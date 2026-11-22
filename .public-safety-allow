@@ -11,3 +11,6 @@ email:.public-safety-allow:support@syncwin.com
 drive-path:AGENTS.md:A:\Automation
 drive-path:AGENTS.md:D:\SyncWin
 email:.claude-plugin/plugin.json:support@syncwin.com
+# 2026-11-22 owner-approved: old-history findings (public support address, WordPress.org team address, old local path), matched by hash
+email:*:sha256:d92a214b6160
+drive-path:*AGENTS.md:sha256:dc5b5845f996
