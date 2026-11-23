@@ -1,5 +1,10 @@
 # Changelog: Humanize AI (humanizeai)
 
+## 0.8.2: 2026-11-23
+
+**Changed**
+- Rewrite: never add a claim, outcome, promise or preview to keep a requested length; keep a requested length by rebuilding from the facts already there, within about 20% (fixes full-workflow-fact-lock).
+
 ## 0.8.1: Research update
 
 **Added**
