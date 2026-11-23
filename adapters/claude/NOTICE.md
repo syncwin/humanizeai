@@ -29,6 +29,10 @@ The research belongs to Graphite. This project cites it; it does not reproduce t
 
 Humanize AI began as a private tool used for several months before this release. A later revision took select structural ideas from [blader/humanizer](https://github.com/blader/humanizer) (MIT License, copyright (c) 2025 Siqi Chen). Its copyright notice is reproduced in `LICENSE`. Material adapted from Wikipedia stays under CC BY-SA 4.0, as described above.
 
+## Research sources added 2026-11-22
+
+Paper findings in `knowledge/` are paraphrased from the abstracts, not copied: Bitton et al. 2025 (arXiv:2503.01659); Reinhart et al. 2025 (PNAS, 10.1073/pnas.2422455122); O'Sullivan 2025 (Humanities and Social Sciences Communications); Wenger and Kenett 2025 (arXiv:2501.19361); Cao et al. 2026 (ACL Findings, 2026.findings-acl.682); Juzek and Ward 2025 (COLING, 2025.coling-main.426; arXiv:2508.01930); Galpin et al. 2025 (arXiv:2506.21817); Juzek 2026 (arXiv:2605.25358); Baumler et al. 2026 (ACL, 2026.acl-long.2030); Milicka et al. 2025 (arXiv:2505.01877); Pudasaini et al. 2026 (arXiv:2603.23146); Lalai et al. 2025 (NAACL Findings, 2025.findings-naacl.343).
+
 ## Trademarks and affiliation
 
 Claude is a trademark of Anthropic. Humanize AI is an independent project by SyncWin and is not affiliated with or endorsed by Anthropic, Wikipedia, the Wikimedia Foundation, or Graphite.

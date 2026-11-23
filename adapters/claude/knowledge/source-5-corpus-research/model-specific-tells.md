@@ -1,6 +1,6 @@
 # Model-Specific Tells: Corpus Research (Graphite AI Tells, 2026)
 
-**Last verified:** 2026-10-05
+**Last verified:** 2026-11-22
 
 **Contents:** Sources · What this source adds · Frame families · Per-family tells · Stylistic features · Human-writing markers · Mannered prose · Trends · Limitations · How to use this file
 
@@ -81,6 +81,7 @@ Graphite uses Anthropic's term **mannered prose** for writing that substitutes m
 - Mannered-prose scores are model-judged, so some evaluator bias is possible.
 - Results cover only the model versions tested.
 - Graphite does **not** recommend classifying authorship from individual tells; for that it points to AI detectors.
+- Independent support: Bitton, Bitton, and Nisan (2025, arXiv:2503.01659) found that model-specific stylistic fingerprints persist even when a model is asked to write in other styles. This corroborates the per-model rows above; it adds no new tells.
 
 ## How to use this file
 

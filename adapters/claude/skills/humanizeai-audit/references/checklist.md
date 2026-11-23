@@ -36,6 +36,7 @@ No clear match: use the long-form column, the most complete set.
 - [ ] Sentence lengths counted per paragraph: no more than two consecutive sentences within ~4 words of each other; paragraphs of 3+ sentences have one under 8 words and one over 20 where length allows (`source-4-detector-methodology/statistical-detector-signals.md`)
 - [ ] No em dashes or en dashes, and no spaced hyphen or double hyphen used as a dash, unless a voice sample overrides (`source-2-wikipedia/formatting-tells.md`)
 - [ ] Content-carrying phrasing checked for the default-predictable choice where a specific one exists
+- [ ] When a writer's own sample exists, the delivered text is compared with that sample for voice; the writer's or model's own "sounds like me" judgment is not enough alone (Baumler et al., 2026, ACL, 2026.acl-long.2030)
 
 ### Vocabulary and formatting (always)
 - [ ] Evidence-list words and frames (`source-2-wikipedia/banned-vocabulary.md` Part A, `source-5-corpus-research/model-specific-tells.md`) not clustered; any left are quoting or discussing the pattern itself
