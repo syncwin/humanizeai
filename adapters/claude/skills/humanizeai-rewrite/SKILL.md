@@ -88,7 +88,7 @@ The goal is writing that is human and precise, not messy for its own sake. Don't
 
 **Synonym swapping doesn't work.** Swapping "utilize" for "use" while keeping the sentence structure, paragraph template, and rhythm leaves the measured signal in place (Source 4), and most measured tells are multi-word frames, not single words (Source 5). Change clause structure, pacing, transitions, emphasis, and paragraph weight together.
 
-**Meaning drift is the main risk.** Never let a rewrite soften a claim, drop a qualifier, change a number, or garble a name, quote, or citation, and take extra care past about 800 words. Check each cut against the detector's annotation and the fact-lock list. The auditor catches drift afterwards; the aim is to give it nothing to catch.
+**Meaning drift is the main risk.** Never let a rewrite soften a claim, drop a qualifier, change a number, or garble a name, quote, or citation, and take extra care past about 800 words. Never add a claim, outcome, promise or preview ("the rest of this covers...") that the original lacks. When the user asks to keep the length, rebuild it from what is already there: fuller sentences around the locked facts, plain connecting words, the stated cause and effect spelled out. Never introduce, restate or explain a quote in your own words; a lead-in that says what the speaker felt is a new claim. Land within about 20% of the original word count; only if that still needs new material, come in shorter and say why in one line. Check each cut against the detector's annotation and the fact-lock list. The auditor catches drift afterwards; the aim is to give it nothing to catch.
 
 ## Handoff to `humanizeai-audit`
 
