@@ -2,7 +2,7 @@
 
 **Source:** Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, and John Wieting, "StoryScope: Investigating idiosyncrasies in AI fiction," COLM 2026. [arXiv:2604.03136](https://arxiv.org/abs/2604.03136) (v6, 10 August 2026). Findings and statistics are paraphrased and summarized for practical use, not reproduced from the paper.
 
-**Last verified:** 2026-10-05
+**Last verified:** 2026-11-22
 
 The other sources catch surface signals: vocabulary, formatting, chatbot leakage, sentence rhythm. Those are the fastest tells to fix and the fastest for model makers to train away. This file covers a deeper layer that survives surface editing: the narrative choices a story makes, not the words it uses.
 
@@ -29,6 +29,8 @@ The other sources catch surface signals: vocabulary, formatting, chatbot leakage
 **Stays chronologically linear.** Human authors use flashbacks, time jumps, and nonlinear structure to delay revelations much more; the paper reports greater temporal complexity in human stories. If a piece has a real reason to reorder time and doesn't, reconsider it.
 
 **Converges on the same defaults.** Across all five models, AI stories cluster in one region of narrative space; human stories spread out and land in unusual territory far more often (in the rarest 10% of narrative choices more than three times as often as AI stories). A story that takes the safest option at every fork is doing what AI fiction does in aggregate.
+
+Two independent studies point the same way: stories from each model cluster tightly while human stories spread widely (O'Sullivan, 2025, *Humanities and Social Sciences Communications*, stylometric comparison), and answers from different LLMs resemble each other more than people resemble one another (Wenger and Kenett, 2025, arXiv:2501.19361). Cite this as support only; it adds no new check.
 
 ## Per-model fingerprints
 

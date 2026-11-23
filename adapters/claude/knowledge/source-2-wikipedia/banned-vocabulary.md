@@ -2,7 +2,7 @@
 
 **Sources:** Part A paraphrases [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), section "High density of 'AI vocabulary' words" (revision 1377935935, read 2026-10-05; CC BY-SA 4.0, see `NOTICE.md`) and Graphite's AI Tells research (Source 5). Part B is this plugin's house style.
 
-**Last verified:** 2026-10-05
+**Last verified:** 2026-11-22
 
 This file holds two different kinds of list. Keep them apart:
 
@@ -18,6 +18,8 @@ When a listed term turns up in text being rewritten, pick the alternative that f
 **Read literally.** A word being overused does not make its synonyms overused, and context matters ("underscore" can mean an underline mark or film music).
 
 **Density, not presence.** One or two of these in a piece can be coincidence. Many of them, many times, in text written after 2022 is one of the strongest signs, because they co-occur.
+
+**Why these words, and what to do about them.** Juzek and Ward (2025, COLING, 2025.coling-main.426) tracked 21 focal words that rose sharply after 2022 and think tuning on human feedback is a plausible cause; their follow-up (2025, arXiv:2508.01930) found that people often prefer text containing the overused words, so a rise in use is not a sign of poor quality. Related words rise together as clusters (Galpin, Anderson, and Juzek, 2025, arXiv:2506.21817), so when a flagged word is replaced, check its near-synonyms in the same passage and rework the sentence rather than trading one cluster member for another. Apply this only to clusters already on the lists here. The pattern is not limited to English: Juzek (2026, arXiv:2605.25358) found AI-associated words rising in 26 of 34 languages. The lists below stay unchanged.
 
 **Wikipedia's words to watch, by era** (rough boundaries):
 

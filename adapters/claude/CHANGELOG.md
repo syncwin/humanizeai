@@ -1,5 +1,12 @@
 # Changelog: Humanize AI (humanizeai)
 
+## 0.8.1: Research update
+
+**Added**
+- Cited research findings in the knowledge files (paraphrased, with author, year and id): persistent model fingerprints, grammatical style gaps, cross-model homogeneity, temporal flattening, word-overuse cause and clusters (also across languages), detector limits across domains, a watermark taxonomy reference (reference only), and a human-feedback note.
+- Rewrite: one line on varying stance and emotion in long pieces, and a voice-sample comparison note. Audit checklist: compare against the writer's own sample.
+- `NOTICE.md` lists the added sources.
+
 ## 0.8.0: Feedback round
 
 **Added**

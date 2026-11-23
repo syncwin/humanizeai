@@ -2,7 +2,7 @@
 
 **Source:** [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup), sections "Caveats," "Signs of human writing," "Ineffective indicators," and "Historical indicators." Paraphrased from revision 1377935935, read 2026-10-05. Text licensed CC BY-SA 4.0; see `NOTICE.md`.
 
-**Last verified:** 2026-10-05
+**Last verified:** 2026-11-22
 
 This file is the canonical home for detection humility in this plugin. Other files point here instead of restating it.
 
@@ -14,7 +14,7 @@ This file is the canonical home for detection humility in this plugin. Other fil
 ## Detection ability (people and tools)
 
 - **Tools:** detectors such as GPTZero and Pangram beat chance but have non-trivial error rates, and paraphrasing, markup, spacing changes, or a model the detector wasn't trained on all shift results (RAID benchmark, Dugan et al., ACL 2024; Dik et al., 2025, on GPTZero).
-- **People:** a 2025 study found people no better than chance (Cheng et al., *Advances in Simulation*); a 2025 study on German theses found recognition rates of 57% for AI texts and 64% for human texts (Fiedler and Döpke). Heavy LLM users identified AI-written articles correctly about 90% of the time, so even an expert flags roughly one false positive in ten; light users did only slightly better than chance (Russell, Karpinska, and Iyyer, ACL 2025).
+- **People:** a 2025 study found people no better than chance (Cheng et al., *Advances in Simulation*); a 2025 study on German theses found recognition rates of 57% for AI texts and 64% for human texts (Fiedler and Döpke). Heavy LLM users identified AI-written articles correctly about 90% of the time, so even an expert flags roughly one false positive in ten; light users did only slightly better than chance (Russell, Karpinska, and Iyyer, ACL 2025). People can improve: Milicka et al. (2025, arXiv:2505.01877) found that immediate feedback helps readers get better at telling the two apart.
 - **Convergence:** human speech and writing are absorbing LLM habits (studies from 2024 and 2025 on podcasts, academic writing, and word choice), and some writers now change their style to avoid accusations.
 
 ## Ineffective indicators (never flag on their own)

@@ -2,7 +2,7 @@
 
 **Sources:** publicly documented concepts behind AI-text classifiers (perplexity, burstiness, watermarking, provenance); the caveats in [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and the studies it cites; Liang et al. (2023) on non-native writers; Graphite's AI Tells research (Source 5); Article 50 of the EU AI Act. Full citations at the end.
 
-**Last verified:** 2026-10-05
+**Last verified:** 2026-11-22
 
 The other sources catch what a careful human editor would notice. This file covers what detector tools compute. A piece can pass every qualitative check and still score high on a detector, because detectors measure word- and sentence-level statistics, not "does this sound human." This file is the canonical home for those mechanics and for Gate 2's rationale.
 
@@ -15,6 +15,10 @@ The other sources catch what a careful human editor would notice. This file cove
 **Burstiness:** how much sentence structure varies across a piece. People write unevenly: a short, blunt sentence, then a long one that winds through a few ideas, then another short one. Models default to uniform length and rhythm. Graphite measured lower sentence-length variation in every model it tested (Source 5).
 
 Commercial classifiers combine these with lexical and structural features; perplexity and burstiness remain the inputs most of them start from.
+
+**Two more signals from research (context, not new rules):**
+- **Grammatical and rhetorical style.** Reinhart et al. (2025, *PNAS*, doi 10.1073/pnas.2422455122) found that LLM text differs from human text in the frequency of grammatical and rhetorical features, that the gap persists across model sizes, and that instruction-tuned models sit further from human writing than base models.
+- **Temporal flattening.** Cao et al. (2026, ACL Findings, 2026.findings-acl.682) found that LLM text has more lexical variety yet much less semantic and emotional drift across a long text, and that variability alone separated it from human text with about 94% accuracy. For a long piece, vary stance, emotion, and focus as it goes, not only the words. Do it only where the material really shifts (fact-lock and the Specificity Gradient still apply).
 
 ## Why pattern rules aren't enough on their own
 
@@ -38,12 +42,12 @@ Don't manufacture variance. A short sentence bolted on that adds nothing, or an 
 ## How detection works now
 
 - **Classifier-based** (GPTZero, Pangram, Originality.ai, Copyleaks, Turnitin's AI module): trained models scoring perplexity, burstiness, and lexical and structural features together. Vendors publish their own accuracy figures; independent results are lower and vary by genre, length, and model.
-- **Watermark-based:** some providers (for example Google DeepMind's SynthID) bias token selection in a way only their own tools can detect. It survives light edits, weakens under heavy paraphrase or mixing with human text, and only exists for models that implement it. This plugin can't detect or affect it.
+- **Watermark-based:** some providers (for example Google DeepMind's SynthID) bias token selection in a way only their own tools can detect. It survives light edits, weakens under heavy paraphrase or mixing with human text, and only exists for models that implement it. This plugin can't detect or affect it. For a taxonomy of approaches, see Lalai et al. (2025, NAACL Findings, 2025.findings-naacl.343); reference only.
 - **Provenance-based** (C2PA and similar): signed metadata attached at creation, a disclosure layer rather than a writing signal. Irrelevant to the rewriting task.
 
 ## Reliability: a score is one noisy signal
 
-- **Tools beat chance but err.** Wikipedia's guide warns against relying on detectors alone and notes that paraphrasing, markup, spacing changes, and models absent from the detector's training data all shift scores (RAID benchmark, Dugan et al., 2024; Dik et al., 2025, on GPTZero).
+- **Tools beat chance but err.** Wikipedia's guide warns against relying on detectors alone and notes that paraphrasing, markup, spacing changes, and models absent from the detector's training data all shift scores (RAID benchmark, Dugan et al., 2024; Dik et al., 2025, on GPTZero). Pudasaini et al. (2026, arXiv:2603.23146) report a strong in-domain F1 (0.9734) that drops across domains and across generators.
 - **Bias against non-native writers.** Liang et al. (2023) found widely used detectors consistently misclassified essays by non-native English writers as AI-generated while identifying native writers' essays accurately, and warned against using detectors in evaluative or educational settings.
 - **Model churn.** Tells shift 55% to 72% between consecutive model versions, and every model writes more like other models than like people (Source 5). A detector trained on last year's models can miss this year's.
 - **Known weak spots** (qualitative; vendors document their own thresholds): very short text gives unstable scores; hybrid text (part human, part AI) is the hardest case; domain-constrained writing (legal, technical, medical) is naturally predictable and draws false positives.
@@ -70,4 +74,8 @@ Article 50 of the EU AI Act has applied since 2 August 2026. Under Article 50(4)
 - Dik, S., Erdem, O., and Dik, M. (2025). "Assessing GPTZero's Accuracy in Identifying AI vs. Human-Written Essays." arXiv:2506.23517
 - Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., and Zou, J. (2023). "GPT detectors are biased against non-native English writers." *Patterns* 4(7). arXiv:2304.02819
 - Druck, G., Paredes, J. L., and Smith, E. (2026). "AI Tells" and "AI Tells: Opus 5.5 Update." Graphite. https://graphite.io/five-percent/research/ai-tells
+- Reinhart, A., Markey, B., Laudenbach, M. et al. (2025). "Do LLMs write like humans? Variation in grammatical and rhetorical styles." *PNAS*. doi:10.1073/pnas.2422455122
+- Cao, Go, Hu, and Sushmita (2026). "Temporal Flattening in LLM-Generated Text." ACL Findings 2026. 2026.findings-acl.682
+- Pudasaini, Miralles-Pechuan, Lillis et al. (2026). arXiv:2603.23146
+- Lalai, Ramakrishnan, Shah et al. (2025). "Taxonomy and challenges in text watermarking for LLMs." NAACL Findings 2025. 2025.findings-naacl.343
 - Regulation (EU) 2024/1689 (AI Act), Article 50. https://artificialintelligenceact.eu/article/50/ ; European Commission, "Guidelines on transparency obligations for providers and deployers of certain AI systems." https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations
